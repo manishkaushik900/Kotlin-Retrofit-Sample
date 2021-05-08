@@ -1,5 +1,6 @@
 package com.demo.rks.repository
 
+import android.app.Application
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.demo.rks.api.ApiClient
@@ -11,7 +12,7 @@ import retrofit2.Response
 
 object UserRepository {
 
-    fun getMutubaleLiveData(context: Context): MutableLiveData<ArrayList<User>> {
+    fun getMutubaleLiveData(context: Application): MutableLiveData<ArrayList<User>> {
 
         val mutableLiveData = MutableLiveData<ArrayList<User>>()
 

@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         listUsers = mutableListOf<User>()
 
         adapter = CustomAdapter(listUsers)
-        
+
         recyclerView.adapter = adapter
 
         val userViewModel =
-            ViewModelProviders.of(this, UserViewModelFactory(this)).get(UserViewModel::class.java)
+            ViewModelProviders.of(this, UserViewModelFactory(application)).get(UserViewModel::class.java)
 
         userViewModel.getData().observe(this, object : Observer<ArrayList<User>> {
             override fun onChanged(t: ArrayList<User>?) {
